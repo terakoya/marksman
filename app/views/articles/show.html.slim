@@ -1,6 +1,3 @@
-ruby:
-  processor = Qiita::Markdown::Processor.new
-
 p#notice = notice
 
 p
@@ -8,7 +5,7 @@ p
   = @article.title
 p
   strong Body:
-  = processor.call(@article.body)[:output].to_s.html_safe
+  = @processor.call(@article.body)[:output].to_s.html_safe
 
 = link_to 'Edit', edit_article_path(@article)
 '|
