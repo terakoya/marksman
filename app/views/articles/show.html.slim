@@ -10,6 +10,20 @@ p
   strong Body:
   = processor.call(@article.body)[:output].to_s.html_safe
 
+- @article.comments.each do |comment|
+  p
+    = comment.body
+
+= form_for [@article, @comment] do |f|
+  = f.hidden_field :article_id, value: @article.id
+  = f.text_area :body
+  p
+  = f.submit
+
+
+p
+
 = link_to 'Edit', edit_article_path(@article)
 '|
 = link_to 'Back', articles_path
+
