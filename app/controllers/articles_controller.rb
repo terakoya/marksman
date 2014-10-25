@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.joins(:comments).find(params[:id])
     @comment = Comment.new
+    @processor = Qiita::Markdown::Processor.new
   end
 
   # GET /articles/new
