@@ -10,6 +10,10 @@ p
   strong Body:
   = processor.call(@article.body)[:output].to_s.html_safe
 
+p
+  strong Tags:
+  = @tags.join(', ')
+
 = form_for Tagging.new do |f|
   p
     |tags:

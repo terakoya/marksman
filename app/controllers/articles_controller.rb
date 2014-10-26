@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @tags = @article.tags.map{|tag| tag.name}
   end
 
   # GET /articles/new
